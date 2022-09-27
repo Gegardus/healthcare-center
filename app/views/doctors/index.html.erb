@@ -1,0 +1,8 @@
+<div class="container-fluid d-flex flex-column align-items-center">
+  <p> Hello Doc! </p>  
+  <p>Your authorization number is <%= current_doctor.phone%></p>          
+  <p>There are <%= Doctor.count %> doctor(s) in the system</p>
+  <p>There are <%= User.count %> patient(s) in the system</p>     
+     
+  <%= button_to "Doctor Signout", destroy_doctor_session_path, 'method': :delete, class: "btn btn-warning text-black" %>     
+</div>
