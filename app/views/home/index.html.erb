@@ -1,0 +1,16 @@
+<div class="container-fluid d-flex flex-column align-items-center">
+  <h1>Welcome to our Healthcare Center</h1>
+
+  <p>If you are not signed in, follow this link for login</p>
+  <p>For doctors</p>
+  <%= link_to "Doctor Signin", new_doctor_session_path, class: "btn btn-danger text-light" %>
+  <p>For patients</p>
+  <%= link_to "Patient Signin", new_user_session_path, class: "btn btn-primary text-light" %>
+  
+  <p>If you are not registrated, follow this link for registrations</p>
+  <p>For doctors</p>
+  <%= link_to "Doctor Signup",  new_doctor_registration_path, class: "btn btn-danger text-light" %>
+  <p>For patients</p>
+  <%= link_to "Patient Signup",  new_user_registration_path, class: "btn btn-primary text-light" %>        
+        
+</div>     
