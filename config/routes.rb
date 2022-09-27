@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   # get 'doctors/show'
   # get 'users/index'
   # get 'users/show'
-  get 'home/index'
+  # get 'home/index'
   devise_for :users, controllers: {
     sessions: 'users/sessions',
     passwords: 'users/passwords',
