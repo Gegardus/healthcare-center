@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class Doctors::UnlocksController < Devise::UnlocksController
   # GET /resource/unlock/new
   # def new
