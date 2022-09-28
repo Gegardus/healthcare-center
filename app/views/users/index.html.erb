@@ -1,9 +1,14 @@
-<div class="container-fluid d-flex flex-column align-items-center">
-  <h1>Users#index</h1>
-  <p> Hello Dear Patient! </p>
-  <p>Your authorization number is <%= current_user.phone%></p>           
-  <p>There are <%= Doctor.count %> doctor(s) in the system</p>
-  <p>There are <%= User.count %> patient(s) in the system</p>   
-       
-  <%= button_to "Patient Signout", destroy_user_session_path, 'method': :delete, class: "btn btn-warning text-black" %>
+<div class="container-fluid d-flex flex-column align-items-center bg-light">
+ 
+  <h1> Hello Dear <%= current_user.full_name%>!</h1> 
+  <p class="text-xl-center">Our medical center offers a full range of services for recovery and maintaining your health. <br>To view a list of our specialists and make an appointment, just go to your personal profile:</p>      
+  
+  <div class="mb-2">
+    <%= link_to "Enter Your Profile", user_path(@user), class: "btn btn-success text-white" %>
+  </div>
+  <p><mark>Or vizit us next time:</mark></p>
+  <div class="mb-2">
+    <%= button_to "Patient Signout", destroy_user_session_path, 'method': :delete, class: "btn btn-warning text-black" %>
+  </div>
+
 </div>  
