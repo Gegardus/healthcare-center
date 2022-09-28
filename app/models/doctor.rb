@@ -6,7 +6,7 @@ class Doctor < ApplicationRecord
 
   belongs_to :category
   has_many :appointments, dependent: :destroy
-  has_many :users, through: :appointments    
+  has_many :users, through: :appointments
 
   validates :phone, uniqueness: true
 
