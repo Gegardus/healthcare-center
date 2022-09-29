@@ -1,5 +1,5 @@
 class AppointmentsController < ApplicationController
-  before_action :authenticate_user!, only: %i[create destroy]  
+  before_action :authenticate_user!, only: %i[create destroy]
 
   def index
     @user = current_user # User.find(params[:user_id])
@@ -29,7 +29,7 @@ class AppointmentsController < ApplicationController
   end
 
   def destroy
-    @appointment = Appoinment.find(params[:id])  
+    @appointment = Appoinment.find(params[:id])
     @appointment.destroy!
     redirect_to appointments_path(id: @patient.id), notice: 'Appointment was deleted successfully!'
   end

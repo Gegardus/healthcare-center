@@ -1,11 +1,11 @@
 class DoctorsController < ApplicationController
   before_action :authenticate_doctor!
-  def index 
+  def index
     @doctor = current_doctor.id
   end
 
   def show
-   @appointments = Appointment.where(doctor_id: current_doctor.id)
-   @prescriptions = Prescription.where(appointment_id: current_doctor.id)
+    @appointments = Appointment.where(doctor_id: current_doctor.id)
+    @prescriptions = Prescription.where(appointment_id: current_doctor.id)
   end
 end
