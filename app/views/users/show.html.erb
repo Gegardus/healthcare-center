@@ -1,2 +1,12 @@
 <h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+
+<% @doctors.each do |doc| %>
+  <%= link_to new_appointment_path do %>
+        <li class="card left">
+          <div class="card">
+          <p> Use this identifier number to make appintment # <%= doc.id %> </p>         
+          <img src=<%= doc.image %> alt="" width="50%" heigth="50%">   
+          <h5><%= doc.full_name %></h5>                
+          </div>
+  <% end %>
+<% end %>
