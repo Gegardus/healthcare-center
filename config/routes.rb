@@ -1,9 +1,4 @@
 Rails.application.routes.draw do
-  # get 'doctors/index'
-  # get 'doctors/show'
-  # get 'users/index'
-  # get 'users/show'
-  # get 'home/index'
   devise_for :users, controllers: {
     sessions: 'users/sessions',
     passwords: 'users/passwords',
@@ -17,6 +12,8 @@ Rails.application.routes.draw do
 
   resources :users
   resources :doctors
+  resources :appointments
+  resources :prescriptions
 
   unauthenticated do
     root "home#index"

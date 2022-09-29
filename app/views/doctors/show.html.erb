@@ -1,2 +1,25 @@
 <h1>Doctors#show</h1>
-<p>Find me in app/views/doctors/show.html.erb</p>
+
+<% @appointments.each do |a| %>  
+        <li class="card left">
+          <div class="card">
+          <p>Click here to make appointment and use this identifier number # <strong><%= a.id %></strong> </p>  
+          <p>DoctorID: <%= a.doctor_id %></p>       
+          <p>UserID<%= a.user_id %></p>             
+           <p>Appointment Date <%= a.appointment_date %></p> 
+            <p>Is appoinment closed? <strong><%= a.closed %></strong></p>    
+          </div> 
+        </li>
+<% end %>
+ <section>
+  <h4 class="">Add a new prescription</h4>
+  <%= form_with model: @prescription, url: prescriptions_path, class: "card left" do |form| %>
+   <%= form.label :prescript, hidden: true, class: "form-label" %> <br>   
+    <%= form.text_area :prescript, cols: 30, rows: 10 %>     
+     <%= form.label :appointment_id %> <br>
+    <%= form.text_field :appointment_id,
+    placeholder: "AppointmentID",
+      class: "rounded-md"  %> <br>
+    <%= form.submit "Submit", class: "btn" %>
+  <% end %>
+</section>
