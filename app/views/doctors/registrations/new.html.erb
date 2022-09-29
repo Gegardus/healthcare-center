@@ -9,19 +9,26 @@
     placeholder: "Full Name",
     class: "rounded-md" %>    
   </div>
-     <div class="field">
+  <div class="field">
     <%= f.label :image, class: "mb-2" %><br />
     <%= f.text_field :image, 
     placeholder: "Image",
     class: "rounded-md" %>    
+  </div>
+  <div class="field">
+    <%= f.label :category_id, class: "mb-2" %><br />
+    <%= f.text_field :category_id, autofocus: true,
+    placeholder: "CategoryId",
+    class: "rounded-md" %>
   </div>
   <div class="form-inputs">
     <div class="field">
       <%= f.label :phone, class: "mb-2" %><br />
       <%= f.text_field :phone, autofocus: true,
       placeholder: "Phone",
-      class: "rounded-md" %>
+      class: "rounded-md" %>     
   </div>
+      <div class="form-inputs">  
         <%= f.input :password,
                 required: true,
                 hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),

@@ -7,7 +7,7 @@ class UsersController < ApplicationController
   end
 
   def show 
-    # @user = current_user.id
+    @user = current_user.id
     @doctors = Doctor.all
   end
 end

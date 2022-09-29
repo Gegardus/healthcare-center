@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   resources :users
   resources :doctors
   resources :appointments
+  resources :prescriptions
 
   unauthenticated do
     root "home#index"

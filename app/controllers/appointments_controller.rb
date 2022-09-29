@@ -2,14 +2,14 @@ class AppointmentsController < ApplicationController
   before_action :authenticate_user!, only: %i[create destroy]  
 
   def index
-    @user = User.find(params[:user_id])
-    @doctor = Doctor.find(params[:doctor_id])
-    # @appointments = @patient.appointments
+    @user = current_user # User.find(params[:user_id])
+    # @doctor = Doctor.find(params[:doctor_id])
+    @appointment = @user.appointments
   end
 
   def show
-    # @user = User.find(params[:user_id])
-    # @appointment = Appointment.find(params[:id])
+    @user = current_user
+    @appointment = Appointment.find(params[:id])
   end
 
   def new
