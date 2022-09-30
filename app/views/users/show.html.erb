@@ -4,10 +4,10 @@
   <%= link_to new_appointment_path, class: "btn btn-link" do %>
         <li class="card left">
           <div class="card">
-           <p>Click here to make appointment and use this identifier number # <strong><%= doc.id %></strong> </p>         
-          <img src=<%= doc.image %> alt="" width="75%" heigth="75%">   
-          <p>Speciality: <%= doc.category_id %></p>       
-          <h5><%= doc.full_name %></h5>                
+            <p>Click here to make appointment and use this identifier number # <strong><%= doc.id %></strong> </p>   
+            <%= image_tag "doc1.png", class: 'rounded-circle shadow-lg d-block mx-auto', width: 150, height: 150 %> 
+            <p>Speciality: <%= doc.category_id %></p>       
+            <h5><%= doc.full_name %></h5>                
           </div>
           </li>
   <% end %>
