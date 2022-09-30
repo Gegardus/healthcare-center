@@ -1,10 +1,12 @@
 <h1>Prescriptions#new</h1>
 
- <section>
-  <h4 class="">Add a new prescription</h4>
+<section>
+  <h1 class="">Add a new prescription</h1>
   <%= form_with model: @prescription, url: prescriptions_path, class: "card left" do |form| %>
-   <%= form.label :prescript, hidden: true, class: "form-label" %> <br>   
-    <%= form.text_area :prescript, cols: 30, rows: 10 %>     
+   <%= form.label :appointment_id %> <br>
+    <%= form.text_field :appointment_id %> <br>   
+    <%= form.label :prescription %> <br>
+    <%= form.text_area :text , cols: 30, rows: 10 %> <br>
     <%= form.submit "Submit", class: "btn" %>
-  <% end %>
+  <% end %>   
 </section>
