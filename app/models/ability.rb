@@ -2,9 +2,10 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
-    if user.is_a?(Doctor)
+    case user
+    when Doctor
       can :manage, :all
-    elsif user.is_a?(User)
+    when User
       can :create, Appointment
       can :read, :all
     else
