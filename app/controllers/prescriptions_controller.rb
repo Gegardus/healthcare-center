@@ -12,11 +12,11 @@ class PrescriptionsController < ApplicationController
     @prescription = Prescription.find(params[:id])
   end
 
-  def new    
+  def new
     @prescription = Prescription.new
   end
 
-  def create     
+  def create
     @prescription = current_doctor
     @prescription = Prescription.new(prescription_params)
     @prescription = current_user
