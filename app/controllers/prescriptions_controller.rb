@@ -1,14 +1,11 @@
 class PrescriptionsController < ApplicationController
   before_action :authenticate_doctor!, only: %i[create destroy]
 
-  def index
-    # @doctor = current_doctor
-    # @prescription = @appointment.prescriptions
+  def index   
     @prescription = Presciption.all
   end
 
-  def show
-    # @doctor = current_doctor
+  def show 
     @prescription = Prescription.find(params[:id])
   end
 

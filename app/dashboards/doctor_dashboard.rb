@@ -11,8 +11,7 @@ class DoctorDashboard < Administrate::BaseDashboard
     id: Field::Number,
     appointments: Field::HasMany,
     category: Field::BelongsTo,
-    email: Field::String,
-    password: Field::String,
+    email: Field::String,   
     encrypted_password: Field::String,
     full_name: Field::String,
     head_physician: Field::Boolean,
@@ -24,6 +23,8 @@ class DoctorDashboard < Administrate::BaseDashboard
     users: Field::HasMany,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
+    password: Field::String,
+    password_confirmation: Field::String,
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -64,8 +65,7 @@ class DoctorDashboard < Administrate::BaseDashboard
   FORM_ATTRIBUTES = %i[
     appointments
     category
-    email
-    password
+    email    
     encrypted_password
     full_name
     head_physician
@@ -75,6 +75,8 @@ class DoctorDashboard < Administrate::BaseDashboard
     reset_password_sent_at
     reset_password_token
     users
+    password
+    password_confirmation
   ].freeze
 
   # COLLECTION_FILTERS

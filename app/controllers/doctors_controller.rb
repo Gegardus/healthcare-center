@@ -7,5 +7,6 @@ class DoctorsController < ApplicationController
   def show
     @appointments = Appointment.where(doctor_id: current_doctor.id)
     @prescriptions = Prescription.where(appointment_id: current_doctor.id)
+    @prescription = current_doctor  
   end
 end
