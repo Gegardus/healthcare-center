@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
       root to: "prescriptions#index"
     end
-  get 'admin_users/index'
+ 
   devise_for :admin_users, controllers: {
     sessions: 'admin_users/sessions',
     passwords: 'admin_users/passwords',

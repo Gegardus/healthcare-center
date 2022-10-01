@@ -21,7 +21,7 @@ class AppointmentsController < ApplicationController
     @appointment.user = current_user
 
     if @appointment.save
-      redirect_to @appointment # patient_path(id: @appointment.patient_id)
+      redirect_to @appointment
       flash[:notice] = 'Your appointment was successfully created'
     else
       render :new, alert: 'An error has occurred while creating an appointment'
