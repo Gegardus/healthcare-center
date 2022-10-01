@@ -1,0 +1,10 @@
+<div class="container-fluid d-flex flex-column align-items-center">
+  <h1> Goodby Mister <%= current_admin_user.full_name%>!</h1>       
+  <div class="mb-2">
+  <% button_to "Go to Sanctum", admin_user_path(@admin_user), class: "btn btn-danger text-whit" %>     
+</div> 
+  <p><mark>Leaving click here:</mark></p>
+  <div class="mb-2">
+  <%= button_to "Sign out", destroy_admin_user_session_path, 'method': :delete, class: "btn btn-primary text-white" %>     
+</div>
+</div>

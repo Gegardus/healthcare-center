@@ -1,11 +1,8 @@
-class User < ApplicationRecord
+class AdminUser < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-
-  has_many :appointments, dependent: :destroy
-  has_many :doctors, through: :appointments
 
   validates :phone, uniqueness: true
   validates :password, presence: true
@@ -13,8 +10,8 @@ class User < ApplicationRecord
   def email_required?
     false
   end
-
+       
   def email_changed?
     false
-  end
+  end       
 end

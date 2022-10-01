@@ -18,6 +18,8 @@ class ApplicationController < ActionController::Base
       doctors_path
     when User
       users_path
+    when AdminUser      
+      admin_users_path
     end
   end
 

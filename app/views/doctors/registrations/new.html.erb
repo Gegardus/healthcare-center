@@ -20,15 +20,14 @@
     <%= f.text_field :category_id, autofocus: true,
     placeholder: "CategoryId",
     class: "rounded-md" %>
-  </div>
-  <div class="form-inputs">
-    <div class="field">
-      <%= f.label :phone, class: "mb-2" %><br />
+  </div> 
+    
+      <div class="form-inputs">  
+        <div class="field">
+        <%= f.label :phone, class: "mb-2" %><br />
       <%= f.text_field :phone, autofocus: true,
       placeholder: "Phone",
-      class: "rounded-md" %>     
-  </div>
-      <div class="form-inputs">  
+      class: "rounded-md" %>    
         <%= f.input :password,
                 required: true,
                 hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),

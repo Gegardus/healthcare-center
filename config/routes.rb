@@ -1,4 +1,20 @@
 Rails.application.routes.draw do
+  namespace :admin do
+      resources :prescriptions
+      resources :categories
+      resources :appointments
+      resources :doctors
+      resources :users
+      resources :admin_users
+
+      root to: "prescriptions#index"
+    end
+  get 'admin_users/index'
+  devise_for :admin_users, controllers: {
+    sessions: 'admin_users/sessions',
+    passwords: 'admin_users/passwords',
+    registrations: 'admin_users/registrations'
+  }
   devise_for :users, controllers: {
     sessions: 'users/sessions',
     passwords: 'users/passwords',
@@ -14,6 +30,7 @@ Rails.application.routes.draw do
   resources :doctors
   resources :appointments
   resources :prescriptions
+  resources :admin_users
 
   unauthenticated do
     root "home#index"
@@ -25,5 +42,9 @@ Rails.application.routes.draw do
 
   authenticated :user do
     root 'users#index', as: :authenticated_user_root
+  end
+
+  authenticated :admin_user do
+    root 'admin_users#show', as: :authenticated_admin_user_root
   end
 end
