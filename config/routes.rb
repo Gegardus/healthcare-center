@@ -1,4 +1,6 @@
-Rails.application.routes.draw do
+Rails.application.routes.draw do 
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
   devise_for :users, controllers: {
     sessions: 'users/sessions',
     passwords: 'users/passwords',
@@ -14,6 +16,7 @@ Rails.application.routes.draw do
   resources :doctors
   resources :appointments
   resources :prescriptions
+  resources :categories
 
   unauthenticated do
     root "home#index"
