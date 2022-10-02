@@ -1,0 +1,9 @@
+<div class="container-fluid d-flex flex-column align-items-center">
+  <h1> Hello Mister <%= current_admin_user.full_name%>!</h1>  
+  <p class="text-xl-center">A warm welcome to the office! </p> 
+  <p><mark>Leaving click here:</mark></p>
+  <div class="mb-2">
+    <%= button_to "Goodby Boss", destroy_admin_user_session_path, 'method': :delete, class: "btn btn-primary text-white" %>     
+  </div>
+</div>
+

@@ -1,5 +1,5 @@
 class Category < ApplicationRecord
-  has_many :doctors
+  belongs_to :doctor
 
   validates :name, uniqueness: true
 end
