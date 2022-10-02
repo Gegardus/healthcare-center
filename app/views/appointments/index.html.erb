@@ -1,3 +1,6 @@
-<h1>Appointments#index</h1>
+<h1>All Appointments</h1>
 
-<%= @appointment.appointment_date %>
+<% @appointments.each do |app| %>
+<p><%= app.id %></p>
+<p>You have appointment at <%= app.appointment_date %></p>
+<%end%>

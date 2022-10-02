@@ -6,7 +6,7 @@ class Ability
     when AdminUser
       can :manage, :all
     when Doctor
-      can :manage, Appointment, Prescription
+      can :manage, Prescription, Appointment
       can :read, :all
     when User
       can :manage, Appointment

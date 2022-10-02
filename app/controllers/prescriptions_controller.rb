@@ -1,14 +1,11 @@
 class PrescriptionsController < ApplicationController
   before_action :authenticate_doctor!, only: %i[create destroy]
 
-  def index
-    # @doctor = current_doctor
-    # @prescription = @appointment.prescriptions
-    @prescription = Presciption.all
+  def index   
+    @prescriptions = Prescription.all
   end
 
-  def show
-    # @doctor = current_doctor
+  def show 
     @prescription = Prescription.find(params[:id])
   end
 
@@ -16,10 +13,8 @@ class PrescriptionsController < ApplicationController
     @prescription = Prescription.new
   end
 
-  def create
-    @prescription = current_doctor
-    @prescription = Prescription.new(prescription_params)
-    @prescription = current_user
+  def create  
+    @prescription = Prescription.new(prescription_params)    
 
     if @prescription.save
       redirect_to @prescription

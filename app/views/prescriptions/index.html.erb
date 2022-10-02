@@ -1,3 +1,6 @@
-<h1>Prescriptions#index</h1>
+<h1>All Prescriptions</h1>
 
-<%= @prescription.prescript %>
+<% @prescriptions.each do |pr| %>
+<p><%= pr.id %></p>
+<p>You should <%= pr.prescript %></p>
+<%end%>
