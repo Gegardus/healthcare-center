@@ -3,10 +3,13 @@ class Ability
 
   def initialize(user)
     case user
-    when Doctor
+    when AdminUser
       can :manage, :all
+    when Doctor
+      can :manage, Appointment, Prescription
+      can :read, :all
     when User
-      can :create, Appointment
+      can :manage, Appointment
       can :read, :all
     else
       can :read, :all
