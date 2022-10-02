@@ -1,4 +1,4 @@
-require "administrate/base_dashboard"
+require 'administrate/base_dashboard'
 
 class UserDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
@@ -20,6 +20,8 @@ class UserDashboard < Administrate::BaseDashboard
     reset_password_token: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
+    password: Field::String,
+    password_confirmation: Field::String
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -64,6 +66,8 @@ class UserDashboard < Administrate::BaseDashboard
     remember_created_at
     reset_password_sent_at
     reset_password_token
+    password
+    password_confirmation
   ].freeze
 
   # COLLECTION_FILTERS

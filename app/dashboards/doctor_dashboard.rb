@@ -1,4 +1,4 @@
-require "administrate/base_dashboard"
+require 'administrate/base_dashboard'
 
 class DoctorDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
@@ -22,6 +22,8 @@ class DoctorDashboard < Administrate::BaseDashboard
     users: Field::HasMany,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
+    password: Field::String,
+    password_confirmation: Field::String
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -70,6 +72,8 @@ class DoctorDashboard < Administrate::BaseDashboard
     reset_password_sent_at
     reset_password_token
     users
+    password
+    password_confirmation
   ].freeze
 
   # COLLECTION_FILTERS

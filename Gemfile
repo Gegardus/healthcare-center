@@ -68,7 +68,7 @@ group :development do
   # gem "spring"
 end
 
-gem "administrate"
+gem 'administrate'
 gem 'cancancan', '~> 1.9'
 gem 'devise'
 gem 'rubocop', '>= 1.0', '< 2.0'
