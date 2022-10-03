@@ -1,3 +1,8 @@
 <h1>Your Prescription</h1>
 
 <p>Doctor recommends you: <%= @prescription.prescript %></p>
+
+<% unless @prescription.prescript.nil? || @prescription.prescript == 0 %>
+ <% @appointment.closed = "true" %>
+  <p> Appoinment closed status: <strong><%= @appointment.closed %></strong> </p>
+<% end %>

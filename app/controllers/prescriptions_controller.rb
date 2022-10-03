@@ -6,7 +6,8 @@ class PrescriptionsController < ApplicationController
   end
 
   def show
-    @prescription = Prescription.find(params[:id])
+    @prescription = Prescription.find(params[:id])    
+    @appointment = Appointment.find(@prescription.appointment_id)
   end
 
   def new
