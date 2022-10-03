@@ -1,24 +1,17 @@
-<h1>Doctors#show</h1>
+<h1>Doctors Profile</h1>
+
+<h4>Serve your appointment</h4>
 
 <% @appointments.each do |a| %>  
+ <%= link_to new_prescription_path, class: "btn btn-link" do %>
         <li class="card left">
           <div class="card">
-          <p>Click here to make appointment and use this identifier number # <strong><%= a.id %></strong> </p>  
-          <p>DoctorID: <%= a.doctor_id %></p>       
-          <p>UserID<%= a.user_id %></p>             
-           <p>Appointment Date <%= a.appointment_date %></p> 
+          <p>Click here to write prescription and use <br> this identifier number as appointment_id # <strong><%= a.id %></strong> </p>  
+         <a><p>DoctorID: <strong><%= a.doctor_id %></strong></p></a>      
+          <p>UserID: <strong><%= a.user_id %></strong></p>             
+           <p>Appointment Date <strong><%= a.appointment_date %></strong></p> 
             <p>Is appoinment closed? <strong><%= a.closed %></strong></p>    
           </div> 
         </li>
+  <% end %>      
 <% end %>
-<section>
-  <h1 class="">Add a new prescription</h1>
-  <%= form_with model: @prescription, url: prescriptions_path, class: "card left" do |form| %>
-   <%= form.label :appointment_id %> <br>
-    <%= form.text_field :appointment_id,
-    placeholder: "AppointmentID" %> <br>   
-    <%= form.label :prescription %> <br>
-    <%= form.text_area :text , cols: 30, rows: 10 %> <br>
-    <%= form.submit "Submit", class: "btn" %>
-  <% end %>   
-</section>
