@@ -10,5 +10,6 @@ class UsersController < ApplicationController
   def show
     @user = current_user.id
     @doctors = Doctor.all
+    @prescription = Prescription.find(params[:id])       
   end
 end

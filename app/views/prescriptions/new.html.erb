@@ -1,11 +1,17 @@
 <section>
+
   <h1 class="">Add a new prescription</h1>
+
+  <%= @user.full_name%>
+
+  <% @appointments.each do |a| %>  
   <%= form_with model: @prescription, url: prescriptions_path, class: "card left" do |form| %>
-   <%= form.label :appointment_id %> <br>
-    <%= form.text_field :appointment_id,
-     placeholder: "Appointment ID" %> <br>   
+    <% form.text_field :appointment_id,
+     value: a.id  %> <br>   
     <%= form.label :prescript %> <br>
     <%= form.text_area :prescript , cols: 30, rows: 10 %> <br>
     <%= form.submit "Submit", class: "btn" %>
-  <% end %>   
+  <% end %>  
+   <% end %>  
 </section>
+

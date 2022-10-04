@@ -10,7 +10,7 @@ module Admin
 
     def authenticate_admin
       # TODO: Add authentication logic here.
-      # redirect_to root_url, alert: 'Sorry You do not have enought privilege' unless current_admin_user
+      redirect_to root_url, alert: 'Sorry You do not have enought privilege' unless current_admin_user
     end
 
     # Override this value to specify the number of elements to display at a time

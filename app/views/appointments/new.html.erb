@@ -1,17 +1,21 @@
 <section>
-  <h1 class="">Add a new appointment</h1>
-  <%= form_with model: @appointment, url: appointments_path, class: "card left" do |form| %>
+<h1> Make new appointment </h1>
+<% @doctors.each do |doc| %>
+   <%= form_with model: @appointment, url: appointments_path, class: "card left" do |form| %>
    <%= form.label :appointment_date, hidden: true, class: "form-label" %> <br>  
    <%= form.datetime_select :appointment_date, required: true, autofocus: true, autocomplete: "datetime", class: "form-select" %><br>
-    <%= form.label :doctor_id %> <br>
-    <%= form.text_field :doctor_id,
-    placeholder: "DoctorID" %> <br>
-    <%= form.label :patient_id %> <br>
-    <%= form.text_field :patient_id,
-    placeholder: "PatientID" %> <br>
-    <%= form.label :closed %> <br>
-    <%= form.text_field :closed,
-    placeholder: "true/false" %> <br>    
+        
+    <% form.text_field :doctor_id,
+    value: doc.id  %> <br>
+     
+    <% form.text_field :patient_id,
+    value: current_user.id %> <br>
+    
+    <% form.text_field :closed,
+    value: "false" %> <br>    
+    
     <%= form.submit "Submit", class: "btn" %>
-  <% end %>
-</section>
+  <% end %>                
+  
+<% end %>
+<section>
