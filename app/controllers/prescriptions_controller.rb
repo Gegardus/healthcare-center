@@ -7,7 +7,7 @@ class PrescriptionsController < ApplicationController
 
   def show
     @prescription = Prescription.find(params[:id])
-    @appointment = Appointment.find(@prescription.appointment_id)   
+    @appointment = Appointment.find(@prescription.appointment_id)
   end
 
   def new
@@ -16,7 +16,7 @@ class PrescriptionsController < ApplicationController
 
     @users = User.all
     @users.each do |u|
-    @user = @users.find(u.id)  
+      @user = @users.find(u.id)
     end
   end
 

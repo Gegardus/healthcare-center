@@ -2,7 +2,7 @@ class AppointmentsController < ApplicationController
   before_action :authenticate_user!, only: %i[create destroy]
 
   def index
-    @user = current_user  
+    @user = current_user
     @appointments = Appointment.all
   end
 
@@ -34,7 +34,7 @@ class AppointmentsController < ApplicationController
   end
 
   private
-  
+
   def appointment_params
     params.require(:appointment).permit(:appointment_date, :closed, :doctor_id, :user_id)
   end

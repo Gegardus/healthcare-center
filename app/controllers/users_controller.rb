@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   before_action :authenticate_user!
 
   load_and_authorize_resource
-  
+
   def index
     @user = current_user.id
     # @users = User.all
@@ -10,7 +10,7 @@ class UsersController < ApplicationController
 
   def show
     @user = current_user.id
-    @display_doctors = appointments_count   
+    @display_doctors = appointments_count
     # @category = Category.find(params[:id])
     @categories = Category.all
     @categories.each do |category|
