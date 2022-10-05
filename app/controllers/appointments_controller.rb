@@ -15,6 +15,7 @@ class AppointmentsController < ApplicationController
   def new
     @appointment = Appointment.new 
     @doctors = Doctor.all
+ 
   end
 
   def create

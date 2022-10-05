@@ -13,10 +13,12 @@ class PrescriptionsController < ApplicationController
   def new
     @prescription = Prescription.new
     @appointments = Appointment.all
-    @user = User.find(1)
-    # @user = User.extract_associated(params[:user_id])
-    # @user = User.joins(:appointments).where(params[:user_id])
-    # @user = User.where(appointment_id: user_id)
+    # @user = User.find(1)
+    # @user = User.extract_associated(doctor_id: params[:id])
+    # @user = User.joins(:appointments).where(user_id: params[:id])
+    # @user = User.where(id: @user.id)
+    @users = User.all
+    
     
   end
 

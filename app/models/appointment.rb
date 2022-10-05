@@ -1,14 +1,5 @@
 class Appointment < ApplicationRecord
-  belongs_to :doctor
-  belongs_to :user
-  has_one :prescription
-
-  validate :max_open_appointments 
-
-  private
-
-  def max_open_appointments
-    if Appointment.where(closed: false).count > 10      
-    end
-  end 
+  belongs_to :doctor, class_name: 'Doctor', foreign_key: 'doctor_id'
+  belongs_to :user, class_name: 'User', foreign_key: 'user_id'
+  has_one :prescription, foreign_key: 'appintment_id'  
 end

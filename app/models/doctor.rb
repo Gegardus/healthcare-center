@@ -5,7 +5,7 @@ class Doctor < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_one :category
-  has_many :appointments, dependent: :destroy
+  has_many :appointments, foreign_key: 'doctor_id', dependent: :destroy
   has_many :users, through: :appointments
 
   validates :phone, uniqueness: true
