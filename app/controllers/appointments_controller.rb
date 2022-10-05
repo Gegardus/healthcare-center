@@ -17,7 +17,7 @@ class AppointmentsController < ApplicationController
   end
 
   def create
-    doctor = Doctor.find_by(id: params[:doctor_id])
+    # doctor = Doctor.find_by(id: params[:doctor_id])
     @appointment = current_user.appointments.new(appointment_params)
     if @appointment.save
       redirect_to @appointment

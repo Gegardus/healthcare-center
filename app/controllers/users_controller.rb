@@ -14,7 +14,7 @@ class UsersController < ApplicationController
     # @category = Category.find(params[:id])
     @categories = Category.all
     @categories.each do |category|
-    @category = @categories.find(category.id)
+      @category = @categories.find(category.id)
     end
   end
 
