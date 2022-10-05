@@ -7,10 +7,17 @@ class PrescriptionsController < ApplicationController
 
   def show
     @prescription = Prescription.find(params[:id])
+    @appointment = Appointment.find(@prescription.appointment_id)   
   end
 
   def new
     @prescription = Prescription.new
+    @appointments = Appointment.all
+
+    @users = User.all
+    @users.each do |u|
+    @user = @users.find(u.id)  
+    end
   end
 
   def create

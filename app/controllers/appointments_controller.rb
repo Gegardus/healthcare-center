@@ -2,8 +2,7 @@ class AppointmentsController < ApplicationController
   before_action :authenticate_user!, only: %i[create destroy]
 
   def index
-    @user = current_user # User.find(params[:user_id])
-    # @doctor = Doctor.find(params[:doctor_id])
+    @user = current_user  
     @appointments = Appointment.all
   end
 
