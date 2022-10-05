@@ -13,13 +13,13 @@ class AppointmentsController < ApplicationController
   end
 
   def new
-    @appointment = Appointment.new
+    doctor = Doctor.find_by(id: params[:doctor_id])
+    @appointment = current_user.appointments.new(doctor:)
   end
 
   def create
-    @appointment = Appointment.new(appointment_params)
-    @appointment.user = current_user
-
+    doctor = Doctor.find_by(id: params[:doctor_id])
+    @appointment = current_user.appointments.new(appointment_params)
     if @appointment.save
       redirect_to @appointment
       flash[:notice] = 'Your appointment was successfully created'
@@ -35,7 +35,7 @@ class AppointmentsController < ApplicationController
   end
 
   private
-
+  
   def appointment_params
     params.require(:appointment).permit(:appointment_date, :closed, :doctor_id, :user_id)
   end
