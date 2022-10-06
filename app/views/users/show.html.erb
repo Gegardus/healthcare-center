@@ -1,17 +1,19 @@
-<h1 class="text-center">Select your doctor</h1>
+<h1 class="text-center">Patients Profile</h1>
+
+<h4 class="text-center">Select your doctor</h4>
 
 <% @display_doctors.each do |doc| %>
-  <%= link_to new_appointment_path(doctor_id: doc.id), class: "btn btn-link" do %> 
+  <%= link_to new_appointment_path(doctor_id: doc.id), class: "link-success p-2" do %> 
   <ul class="list-unstyled">
         <li class="card left">
-          <div class="card">
-            <p class="link-black text-center"><strong>Make an appointment with this physician</strong></p>
-            <a><%= image_tag doc.image, class: 'rounded-circle shadow-lg d-block mx-auto', width: 160, height: 160 %></a>
+          <div class="">
+            <p class="link-black text-center px-5 mx-1"><strong>Click to make an appointment</strong></p>
+            <a><%= image_tag doc.image, class: 'rounded-circle shadow-lg d-block mx-auto', width: 170, height: 180 %></a>
             <p class="m-2">Speciality: <strong><%= @category.name%></strong></p>
             <h5 class="m-2 p-1">Doctor <strong><%= doc.full_name %></strong></h5>
           </div>
-          </li> 
-          </ul>     
+        </li> 
+  </ul>     
           <h5 class="mt-2 p-2"><strong>Appointments: </strong> <%= doc.appointments.count %></h5>
           <p class="card left"> <strong>Doctor's recommendation:</strong> <i><%= @prescription.prescript %></i> <p>
   <% end %>

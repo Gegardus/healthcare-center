@@ -1,12 +1,12 @@
 <section>
   <h1 class="text-center">Add a new prescription</h1>
     
-  <%= form_with model: @prescription, url: prescriptions_path, class: "card left" do |form| %>    
-      <p class="m-2 p-1">Write your prescript for: <strong><%= @user.full_name %></strong></p>        
-      <%= form.hidden_field :appointment_id,  value: @appointment.id%>  <br>  
-      <% form.text_field :closed, value: "false"  %> <br> 
-      <%= form.label :prescript, class: "m-1" %> <br>
-      <%= form.text_area :prescript , cols: 30, rows: 10 %> <br>
-      <%= form.submit "Submit", class: 'pure-button button-secondary mb-2' %>    
+  <%= form_with model: @prescription, url: prescriptions_path, class: "card left" do |form| %>      
+      <%= form.label :prescript, class: "m-1" %>  
+      <p class="m-2 p-1"> for: <strong><%= @user.full_name %></strong></p>
+      <%= form.text_area :prescript , cols: 30, rows: 10 %>
+      <%= form.hidden_field :appointment_id,  value: @appointment.id%>      
+      <%= form.hidden_field :closed, value: "false"  %> <br> 
+      <%= form.submit "Submit", class: 'pure-button button-secondary' %>    
   <% end %>  
 </section>

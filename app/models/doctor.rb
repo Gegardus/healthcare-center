@@ -8,7 +8,8 @@ class Doctor < ApplicationRecord
   has_many :appointments, dependent: :destroy
   has_many :users, through: :appointments
 
-  validates :phone, uniqueness: true
+  validates :phone, uniqueness: true, presence: true
+  validates :full_name, presence: true
 
   def email_required?
     false

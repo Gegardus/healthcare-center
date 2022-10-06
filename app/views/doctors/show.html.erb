@@ -1,18 +1,20 @@
-<h1>Doctors Profile</h1>
+<h1 class="text-center">Doctors Profile</h1>
 
-<h4>Serve your appointment</h4>
+<h4 class="text-center">Serve your appointment</h4>
 
 <% @appointments.each do |a| %>  
- <%= link_to new_prescription_path, class: "btn btn-link" do %>
+ <%= link_to new_prescription_path, class: "link-success p-2" do %>
+      <ul class="list-unstyled">
         <li class="card left">
-          <div class="card">
-          <p class="link-black text-center"><strong>Write prescription</strong></p>
-          <a><p>AppointmentID # <strong><%= a.id %></strong> </p></a>  
-         <a><p>DoctorID: <strong><%= a.doctor_id %></strong></p></a>      
+          <div class="">
+          <p class="text-center"><strong>Click to write prescription</strong></p>
+          <a><p>AppointmentID # <strong><%= a.id %></strong> </p></a> 
+          <p>DoctorID: <strong><%= a.doctor_id %></strong></p>   
           <p>UserID: <strong><%= a.user_id %></strong></p>             
-           <p>Appointment Date <strong><%= a.appointment_date %></strong></p> 
-            <p>Is appoinment closed? <strong><%= a.closed %></strong></p>    
+          <p class="m-2 link-primary">Appointment Date <strong><%= a.appointment_date %></strong></p> 
+          <p>Is appoinment closed? <strong><%= a.closed %></strong></p>    
           </div> 
         </li>
+        </ul>
   <% end %>      
 <% end %>
