@@ -5,7 +5,7 @@
   <ul class="list-unstyled">
         <li class="card left">
           <div class="card">
-            <p class="link-black text-center">Here can make an appointment with this physician</p>
+            <p class="link-black text-center"><strong>Make an appointment with this physician</strong></p>
             <a><%= image_tag doc.image, class: 'rounded-circle shadow-lg d-block mx-auto', width: 160, height: 160 %></a>
             <p class="m-2">Speciality: <strong><%= @category.name%></strong></p>
             <h5 class="m-2 p-1">Doctor <strong><%= doc.full_name %></strong></h5>
@@ -13,5 +13,7 @@
           </li> 
           </ul>     
           <h5 class="mt-2 p-2"><strong>Appointments: </strong> <%= doc.appointments.count %></h5>
+          <p class="card left"> <strong>Doctor's recommendation:</strong> <i><%= @prescription.prescript %></i> <p>
   <% end %>
 <% end %>
+

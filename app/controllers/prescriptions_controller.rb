@@ -6,14 +6,24 @@ class PrescriptionsController < ApplicationController
   end
 
   def show
-    @prescription = Prescription.find(params[:id])
+    # @prescription = Prescription.find(params[:id])
+    @prescriptions = Prescription.all
+    @prescriptions.each do |p|
+      @prescription = @prescriptions.find(p.id)
+    end
+
     @appointment = Appointment.find(@prescription.appointment_id)
   end
 
   def new
     @prescription = Prescription.new
-    @appointments = Appointment.all
 
+    @appointments = Appointment.all
+    @appointments.each do |a|
+      @appointment = @appointments.find(a.id)
+    end
+    # doctor = Doctor.find_by(id: params[:doctor_id])
+    # @appointment = current_user.appointments.new(doctor:)
     @users = User.all
     @users.each do |u|
       @user = @users.find(u.id)
