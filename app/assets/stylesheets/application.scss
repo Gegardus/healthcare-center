@@ -48,3 +48,8 @@ a:hover {
   color: inherit;
   text-decoration: inherit;
 }
+
+.datetime select:nth-child(1) {
+  width: 130px;
+  text-indent: 15px;
+}

@@ -6,7 +6,8 @@
  <%= link_to new_prescription_path, class: "btn btn-link" do %>
         <li class="card left">
           <div class="card">
-          <p>Click here to write prescription and use <br> this identifier number as appointment_id # <strong><%= a.id %></strong> </p>  
+          <p class="link-black text-center"><strong>Write prescription</strong></p>
+          <a><p>AppointmentID # <strong><%= a.id %></strong> </p></a>  
          <a><p>DoctorID: <strong><%= a.doctor_id %></strong></p></a>      
           <p>UserID: <strong><%= a.user_id %></strong></p>             
            <p>Appointment Date <strong><%= a.appointment_date %></strong></p> 

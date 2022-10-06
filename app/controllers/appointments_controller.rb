@@ -2,8 +2,7 @@ class AppointmentsController < ApplicationController
   before_action :authenticate_user!, only: %i[create destroy]
 
   def index
-    @user = current_user # User.find(params[:user_id])
-    # @doctor = Doctor.find(params[:doctor_id])
+    @user = current_user
     @appointments = Appointment.all
   end
 
@@ -13,13 +12,13 @@ class AppointmentsController < ApplicationController
   end
 
   def new
-    @appointment = Appointment.new
+    doctor = Doctor.find_by(id: params[:doctor_id])
+    @appointment = current_user.appointments.new(doctor:)
   end
 
   def create
-    @appointment = Appointment.new(appointment_params)
-    @appointment.user = current_user
-
+    # doctor = Doctor.find_by(id: params[:doctor_id])
+    @appointment = current_user.appointments.new(appointment_params)
     if @appointment.save
       redirect_to @appointment
       flash[:notice] = 'Your appointment was successfully created'

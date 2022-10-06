@@ -61,8 +61,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_02_104455) do
   end
 
   create_table "prescriptions", force: :cascade do |t|
+    t.bigint "appointment_id"
     t.text "prescript"
-    t.bigint "appointment_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["appointment_id"], name: "index_prescriptions_on_appointment_id"
@@ -83,5 +83,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_02_104455) do
 
   add_foreign_key "appointments", "doctors"
   add_foreign_key "appointments", "users"
+  add_foreign_key "categories", "doctors"
   add_foreign_key "prescriptions", "appointments"
 end
