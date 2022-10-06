@@ -16,7 +16,7 @@ class UsersController < ApplicationController
     @categories.each do |category|
       @category = @categories.find(category.id)
     end
-    @prescription = Prescription.find(params[:id])
+    # @prescription = Prescription.find(params[:id]) # commented by Vahan
   end
 
   def appointments_count

@@ -1,6 +1,16 @@
+<%= link_to user_path(@user.id), class: "btn btn-link" do %>
+    <p class="link-black text-center"><strong>back</strong></p>
+<% end %>
 <h1>All Appointments</h1>
-
+<% if @appointments.nil? %>
+<h4> Doctor still didn't make prescription</h4>
+<% else %>
 <% @appointments.each do |app| %>
 <p><%= app.id %></p>
-<p>You have appointment at <%= app.appointment_date %></p>
+<p>You have appointment at <%= app.appointment_date %> with doctor: <%= app.doctor.full_name %> </p>
+<%= link_to prescription_path(app.id), class: "btn btn-link" do %>
+    <p class="link-black text-center"><strong>Doctor' prescription</strong></p>
+<% end %>
+<% end %>
 <%end%>
+<% console %>

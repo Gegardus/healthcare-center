@@ -1,6 +1,8 @@
+<%= link_to doctor_path(@user.id), class: "btn btn-link" do %>
+    <p class="link-black text-center"><strong>back</strong></p>
+<% end %>
 <h1>All Prescriptions</h1>
-
 <% @prescriptions.each do |pr| %>
-<p><%= pr.id %></p>
-<p>You should <%= pr.prescript %></p>
+<p>Prescription for: <%= @appointment.user.full_name %></p>
+<p><%= pr.prescript %></p>
 <%end%>
