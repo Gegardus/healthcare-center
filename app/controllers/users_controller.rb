@@ -5,7 +5,7 @@ class UsersController < ApplicationController
 
   def index
     @user = current_user.id
-    # @users = User.all
+    # @users = User.all # change this line
   end
 
   def show
