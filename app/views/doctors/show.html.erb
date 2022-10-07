@@ -2,10 +2,6 @@
     <p class="link-black text-center"><strong>All Prescriptions</strong></p>
 <% end %>
 
- <div class="mb-2">
-  <%= button_to "Doctor Signout", destroy_doctor_session_path, 'method': :delete, class: "btn btn-warning text-black" %>
-</div>
-
 <h1 class="text-center">Doctor's Profile</h1>
 <h4 class="text-center">Serve your appointment</h4>
 <% @appointments.each do |a| %>
