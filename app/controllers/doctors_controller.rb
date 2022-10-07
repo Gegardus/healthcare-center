@@ -1,7 +1,7 @@
 class DoctorsController < ApplicationController
   before_action :authenticate_doctor!
   def index
-    @doctor = current_doctor.id
+    @doctor = current_doctor
   end
 
   def show

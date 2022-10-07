@@ -1,26 +1,22 @@
 <h1 class="text-center">Patients Profile</h1>
-
-
 <h2> Dear <%= current_user.full_name%>!</h2>
 <p class="text-even">Here you can choose a specialist, appoint a meeting with him and get his recommendations, <br> also go to the page where all the recommendations given by doctors are presented.</p>
-
 <%= link_to appointments_path, class: "link-primary" do %>
   <p class="link-black text-center"><strong>My Appointments</strong></p>
 <% end %>
-
 <h3 class="text-center">Select your doctor</h3>
 
-<% @display_doctors.each do |doc| %>
-  <%= link_to new_appointment_path(doctor_id: doc.id), class: "link-success p-2" do %> 
-  <ul class="list-unstyled">
-        <li class="card left">
-          <div class="">
+<div class="d-flex gap-3 flex-wrap mt-5">
+  <% @display_doctors.each do |doc| %>
+  <div class="card p-2">
+    <div class="card-body">
+  <%= link_to new_appointment_path(doctor_id: doc.id), class: "link-success p-2" do %>   
             <p class="link-black text-center px-5 mx-1"><strong>Click to make an appointment</strong></p>
             <a><%= image_tag doc.image, class: 'rounded-circle shadow-lg d-block mx-auto', width: 170, height: 180 %></a>
             <h5 class="m-1 p-0">Doctor: <strong><%= doc.full_name %></strong></h5>
             <h5 class="mt-1 p-0">Appointments(<strong><%= doc.appointments.count %></strong>)</h5>
           </div>
-        </li> 
-  </ul>               
+        </div>        
+    <% end %>
   <% end %>
-<% end %>
+</div>
