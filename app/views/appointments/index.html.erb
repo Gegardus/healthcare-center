@@ -1,5 +1,5 @@
 <%= link_to user_path(@user.id), class: "btn btn-link" do %>
-  <p class="link-black text-center"><strong>back</strong></p>
+  <p class="link-black text-center"><strong>back to profile</strong></p>
 <% end %>
 <h2><strong>All Appointments</strong></h2>
 <% if @appointments.blank? %>
@@ -7,15 +7,12 @@
 <% else%>
   <% @appointments.each do |app| %>
     <p>You have appointment at <strong><%= app.appointment_date.to_s(:custom_datetime) %></strong> with doctor <strong><%= app.doctor.full_name %></strong> </p>
-    <%= link_to prescription_path(@prescript.id), class: "btn btn-link" do %>
-      <p class="link-black text-center">Prescription from doctor <strong><%= @appointment.doctor.full_name %> </strong>created at <strong> <%=  @prescript.created_at.to_s(:custom_datetime) %></strong></p>
+    <% if app.prescription.blank? %>
+      <p><strong>After an appointment doctor's recommendation will appear here</strong></p>
+    <% else %>
+      <%= link_to prescription_path(app.prescription.id), class: "btn btn-link p-0 m-0 text-success" do %>
+        <p class="link-black text-center"><strong>Doctor's prescription</strong></p>
     <% end %>
   <% end %>
 <% end %>
-</br>
-
-<% if @prescription.blank? %>
-  <p><strong>There are not prescriptions from doctors yet</strong></p>
-<% else %>
 <% end %>
-<% console %>

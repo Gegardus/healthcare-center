@@ -3,7 +3,7 @@
 <% end %>
 
 <h1 class="text-center">Doctors Profile</h1>
-<h4 class="text-center">Serve your appointment</h4>
+<h4 class="text-center">Dear doctor <strong><%= current_doctor.full_name%></strong>, please, serve your appointments</h4>
 
 <% if @appointments.blank? %>
   <h4>You dont have appointmnents yet</h4>

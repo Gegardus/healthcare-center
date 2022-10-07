@@ -29,7 +29,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_02_104455) do
 
   create_table "appointments", force: :cascade do |t|
     t.datetime "appointment_date"
-    t.boolean "closed", default: false
     t.bigint "doctor_id", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false

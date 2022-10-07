@@ -5,6 +5,7 @@ class PrescriptionsController < ApplicationController
     @user = current_doctor || current_user
     @appointment = Appointment.find_by(params[:id])
     @prescriptions = Prescription.all
+    @prescription = Prescription.find_by(params[:id])
   end
 
   def show

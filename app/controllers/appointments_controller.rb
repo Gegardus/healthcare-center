@@ -5,7 +5,6 @@ class AppointmentsController < ApplicationController
     @user = current_user
     @appointments = @user.appointments
     @appointment = @user.appointments.find_by(params[:id])
-    @prescript = @appointment.prescription
     if @appointments.blank?
       nil
     else
@@ -17,12 +16,12 @@ class AppointmentsController < ApplicationController
     @user = current_user
     @prescription = Prescription.find_by(params[:appointment_id])
     @appointment = Appointment.find(params[:id])
-  end
+  end 
 
   def new
     doctor = Doctor.find_by(id: params[:doctor_id])
     @appointment = current_user.appointments.new(doctor:)
-  end
+  end 
 
   def create
     # doctor = Doctor.find_by(id: params[:doctor_id])
@@ -33,24 +32,29 @@ class AppointmentsController < ApplicationController
     else
       render :new, alert: 'An error has occurred while creating an appointment'
     end
-  end
+  end 
 
   def destroy
     @appointment = Appoinment.find(params[:id])
     @appointment.destroy!
     redirect_to appointments_path(id: @patient.id), notice: 'Appointment was deleted successfully!'
-  end
+  end 
 
   def check_status(appointment)
     @appointment = Appointment.find_by(params[:id])
     @prescriptions = Prescription.all
     @prescription = @appointment.prescription
     appointment.status = 1 if appointment.recomendation?
-  end
+  end 
 
   private
-
+  
   def appointment_params
-    params.require(:appointment).permit(:appointment_date, :closed, :doctor_id, :user_id)
+    params.require(:appointment).permit(:appointment_date, :doctor_id, :user_id)
   end
 end
+
+
+
+
+
