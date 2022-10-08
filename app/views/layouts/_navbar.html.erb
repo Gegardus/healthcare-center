@@ -1,13 +1,12 @@
 
 <nav class="inline-flex justify-between items-center">
   <% if user_signed_in? %>
-     <div class="mb-2">
-    <%= button_to "Patient Signout", destroy_user_session_path, 'method': :delete, class: "btn btn-warning text-black" %>
+     <div class="">
+    <%= button_to "Signout", destroy_user_session_path, 'method': :delete, class: 'pure-button rounded-2 my-2' %>
   </div>
     <% elsif doctor_signed_in? %>
-<div class="mb-2">
-  <%= button_to "Doctor Signout", destroy_doctor_session_path, 'method': :delete, class: "btn btn-warning text-black" %>     
-</div>
+<div class="">
+  <%= button_to "Signout", destroy_doctor_session_path, 'method': :delete, class: 'pure-button mt-2 top-end' %>     
+</div> 
     <% end %>     
 </nav>
-

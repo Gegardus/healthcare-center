@@ -1,4 +1,4 @@
-<h1 class="text-center">Patients Profile</h1>
+<h1 class="text-center">Patient's Profile</h1>
 <h2> Dear <%= current_user.full_name%>!</h2>
 <p class="text-even">Here you can choose a specialist, appoint a meeting with him and get his recommendations, <br> also go to the page where all the recommendations given by doctors are presented.</p>
 <%= link_to appointments_path, class: "link-primary" do %>
@@ -15,6 +15,7 @@
             <p class="link-black text-center px-5 mx-1"><strong>Click to make an appointment</strong></p>
             <a><%= image_tag doc.image, class: 'rounded-circle shadow-lg d-block mx-auto', width: 170, height: 180 %></a>
             <h5 class="m-1 p-0">Doctor: <strong><%= doc.full_name %></strong></h5>
+            <h5 class="m-1 p-0">Category: <strong><%= doc.category.name %></strong></h5>
             <h5 class="mt-1 p-0">Appointments(<strong><%= doc.appointments.count %></strong>)</h5>
           </div>
         </div>        
