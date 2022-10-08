@@ -4,12 +4,11 @@ class Doctor < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_one :category
+  belongs_to :category
   has_many :appointments, dependent: :destroy
   has_many :users, through: :appointments
 
-  validates :phone, uniqueness: true, presence: true
-  validates :full_name, presence: true
+  validates :phone, uniqueness: true
 
   def email_required?
     false
