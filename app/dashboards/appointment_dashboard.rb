@@ -10,7 +10,6 @@ class AppointmentDashboard < Administrate::BaseDashboard
   ATTRIBUTE_TYPES = {
     id: Field::Number,
     appointment_date: Field::DateTime,
-    closed: Field::Boolean,
     doctor: Field::BelongsTo,
     prescription: Field::HasOne,
     user: Field::BelongsTo,
@@ -26,7 +25,6 @@ class AppointmentDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = %i[
     id
     appointment_date
-    closed
     doctor
   ].freeze
 
@@ -35,7 +33,6 @@ class AppointmentDashboard < Administrate::BaseDashboard
   SHOW_PAGE_ATTRIBUTES = %i[
     id
     appointment_date
-    closed
     doctor
     prescription
     user
@@ -48,7 +45,6 @@ class AppointmentDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
     appointment_date
-    closed
     doctor
     prescription
     user
