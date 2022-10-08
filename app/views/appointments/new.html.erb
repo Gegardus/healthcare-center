@@ -1,3 +1,7 @@
+<%= link_to user_path(@user.id), class: "btn btn-link" do %>
+    <p class="link-black text-center"><strong>back to profile</strong></p>
+<% end %>
+
 <section>
   <h1 class="text-center">Add a new appointment</h1>
   <%= form_with model: @appointment, url: appointments_path, class: "card left" do |form| %>
