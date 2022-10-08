@@ -1,18 +1,30 @@
-<h1>Doctors Profile</h1>
-
-<h4>Serve your appointment</h4>
-
-<% @appointments.each do |a| %>  
- <%= link_to new_prescription_path, class: "btn btn-link" do %>
-        <li class="card left">
-          <div class="card">
-          <p class="link-black text-center"><strong>Write prescription</strong></p>
-          <a><p>AppointmentID # <strong><%= a.id %></strong> </p></a>  
-         <a><p>DoctorID: <strong><%= a.doctor_id %></strong></p></a>      
-          <p>UserID: <strong><%= a.user_id %></strong></p>             
-           <p>Appointment Date <strong><%= a.appointment_date %></strong></p> 
-            <p>Is appoinment closed? <strong><%= a.closed %></strong></p>    
-          </div> 
-        </li>
-  <% end %>      
+<%= link_to prescriptions_path, class: "link-primary" do %>
+    <p class="link-black text-center"><strong>All Prescriptions</strong></p>
 <% end %>
+
+<h1 class="text-center">Doctors Profile</h1>
+<h4 class="text-center">Dear doctor <strong><%= current_doctor.full_name%></strong>, please, serve your appointments</h4>
+
+<% if @appointments.blank? %>
+  <h4>You dont have appointmnents yet</h4>
+<% else%>
+  <div class="d-flex gap-3 flex-wrap mt-5">
+    <% @appointments.each do |a| %>
+      <% if a.prescription %>
+      <div class="card p-2">
+        <div class="card-body">
+          <strong class="text-danger">Closed </strong>
+        <% else %>
+          <div class="card p-2">
+            <div class="card-body">
+              <%= link_to new_prescription_path(appointment_id: a.id), class: "link-success p-2" do %>
+                <p class=""><strong>Click here to write prescription</strong></p>
+              <% end %>
+            <% end %>
+            <a><p>Patient name: <strong><%= a.user.full_name %></strong></p></a>
+            <p>Appointment Date <strong><%= a.appointment_date.to_s(:custom_datetime) %></strong></p>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>

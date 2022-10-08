@@ -3,11 +3,18 @@ class AppointmentsController < ApplicationController
 
   def index
     @user = current_user
-    @appointments = Appointment.all
+    @appointments = @user.appointments
+    @appointment = @user.appointments.find_by(params[:id])
+    if @appointments.blank?
+      nil
+    else
+      @prescription = @appointment.prescription
+    end
   end
 
   def show
     @user = current_user
+    @prescription = Prescription.find_by(params[:appointment_id])
     @appointment = Appointment.find(params[:id])
   end
 
@@ -33,9 +40,16 @@ class AppointmentsController < ApplicationController
     redirect_to appointments_path(id: @patient.id), notice: 'Appointment was deleted successfully!'
   end
 
+  def check_status(appointment)
+    @appointment = Appointment.find_by(params[:id])
+    @prescriptions = Prescription.all
+    @prescription = @appointment.prescription
+    appointment.status = 1 if appointment.recomendation?
+  end
+
   private
 
   def appointment_params
-    params.require(:appointment).permit(:appointment_date, :closed, :doctor_id, :user_id)
+    params.require(:appointment).permit(:appointment_date, :doctor_id, :user_id)
   end
 end

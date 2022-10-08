@@ -1,5 +1,5 @@
 class Prescription < ApplicationRecord
   belongs_to :appointment
 
-  validates :prescript, presence: true, length: { in: 1..250 }
+  validates :prescript, presence: true, length: { in: 1..650 }
 end

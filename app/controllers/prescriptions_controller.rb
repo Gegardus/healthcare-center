@@ -2,39 +2,31 @@ class PrescriptionsController < ApplicationController
   before_action :authenticate_doctor!, only: %i[create destroy]
 
   def index
+    @user = current_doctor || current_user
+    @appointment = Appointment.find_by(params[:id])
     @prescriptions = Prescription.all
+    @prescription = Prescription.find_by(params[:id])
   end
 
   def show
-    # @prescription = Prescription.find(params[:id])
-    @prescriptions = Prescription.all
-    @prescriptions.each do |p|
-      @prescription = @prescriptions.find(p.id)
-    end
-
-    @appointment = Appointment.find(@prescription.appointment_id)
+    @user = current_doctor || current_user
+    @appointment = Appointment.find_by(params[:doctor_id])
+    @prescription = Prescription.find(params[:id])
   end
 
   def new
+    @user = current_doctor
+    @appointment = Appointment.find_by(id: params[:appointment_id])
     @prescription = Prescription.new
-
-    @appointments = Appointment.all
-    @appointments.each do |a|
-      @appointment = @appointments.find(a.id)
-    end
-    # doctor = Doctor.find_by(id: params[:doctor_id])
-    # @appointment = current_user.appointments.new(doctor:)
-    @users = User.all
-    @users.each do |u|
-      @user = @users.find(u.id)
-    end
   end
 
   def create
+    @user = current_doctor || current_user
+    @appointment = Appointment.find_by(id: params[:appointment_id])
     @prescription = Prescription.new(prescription_params)
 
     if @prescription.save
-      redirect_to @prescription
+      redirect_to prescriptions_path
       flash[:notice] = 'Your prescription was successfully created'
     else
       render :new, alert: 'An error has occurred while creating a prescription'

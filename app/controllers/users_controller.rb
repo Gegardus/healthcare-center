@@ -4,19 +4,12 @@ class UsersController < ApplicationController
   load_and_authorize_resource
 
   def index
-    @user = current_user.id
-    # @users = User.all
+    @user = current_user
   end
 
   def show
-    @user = current_user.id
+    @user = current_user
     @display_doctors = appointments_count
-    # @category = Category.find(params[:id])
-    @categories = Category.all
-    @categories.each do |category|
-      @category = @categories.find(category.id)
-    end
-    @prescription = Prescription.find(params[:id])
   end
 
   def appointments_count
