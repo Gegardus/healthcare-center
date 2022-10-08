@@ -38,8 +38,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_02_104455) do
   end
 
   create_table "categories", force: :cascade do |t|
-    t.bigint "doctor_id"
-    t.string "name", default: "physician"
+    t.bigint "doctor_id", null: false
+    t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["doctor_id"], name: "index_categories_on_doctor_id"
@@ -55,7 +55,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_02_104455) do
     t.datetime "updated_at", null: false
     t.string "phone"
     t.string "full_name"
-    t.string "image"
+    t.string "image", null: false
     t.index ["reset_password_token"], name: "index_doctors_on_reset_password_token", unique: true
   end
 
