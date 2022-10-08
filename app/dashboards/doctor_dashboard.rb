@@ -10,7 +10,7 @@ class DoctorDashboard < Administrate::BaseDashboard
   ATTRIBUTE_TYPES = {
     id: Field::Number,
     appointments: Field::HasMany,
-    category: Field::HasOne,
+    category: Field::BelongsTo,
     email: Field::String,
     encrypted_password: Field::String,
     full_name: Field::String,

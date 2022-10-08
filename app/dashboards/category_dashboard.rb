@@ -9,7 +9,6 @@ class CategoryDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     id: Field::Number,
-    doctor: Field::BelongsTo,
     name: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime
@@ -22,7 +21,6 @@ class CategoryDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
     id
-    doctor
     name
     created_at
   ].freeze
@@ -31,7 +29,6 @@ class CategoryDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
     id
-    doctor
     name
     created_at
     updated_at
@@ -41,7 +38,6 @@ class CategoryDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
-    doctor
     name
   ].freeze
 

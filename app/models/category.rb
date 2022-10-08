@@ -1,5 +1,5 @@
 class Category < ApplicationRecord
-  belongs_to :doctor
+  has_many :doctor, dependent: :destroy
 
-  validates :name, uniqueness: true
+  validates :name, presence: true, uniqueness: true
 end
