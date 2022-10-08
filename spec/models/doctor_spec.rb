@@ -5,9 +5,10 @@ RSpec.describe Doctor, type: :model do
 
   subject do
     @category = Category.create(name: 'surgeon')
-    Doctor.new(full_name: 'Vahan', phone: '8889995678', category: @category, image: 'doc1.png', email: 'doc@mail.com', password: 'docdoc', category_id: '1')
+    Doctor.new(full_name: 'Vahan', phone: '8889995678', category: @category, image: 'doc1.png', email: 'doc@mail.com',
+               password: 'docdoc', category_id: '1')
   end
- 
+
   it 'is valid with valid attributes' do
     expect(subject).to be_valid
   end
