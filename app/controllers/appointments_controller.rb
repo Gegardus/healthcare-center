@@ -2,7 +2,7 @@ class AppointmentsController < ApplicationController
   before_action :authenticate_user!, only: %i[create destroy]
 
   def index
-    @user = current_user
+    @user = current_user || current_doctor
     @appointments = @user.appointments
     @appointment = @user.appointments.find_by(params[:id])
     if @appointments.blank?
@@ -19,6 +19,7 @@ class AppointmentsController < ApplicationController
   end
 
   def new
+    @user = current_user
     doctor = Doctor.find_by(id: params[:doctor_id])
     @appointment = current_user.appointments.new(doctor:)
   end
@@ -50,6 +51,6 @@ class AppointmentsController < ApplicationController
   private
 
   def appointment_params
-    params.require(:appointment).permit(:appointment_date, :doctor_id, :user_id)
+    params.require(:appointment).permit(:appointment_date, :closed, :doctor_id, :user_id)
   end
 end

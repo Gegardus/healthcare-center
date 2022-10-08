@@ -1,8 +1,6 @@
-<% if @user = current_user %>
- <%= link_to user_path(@user.id), class: "btn btn-link" do %>
+<%= link_to user_path(@user.id), class: "btn btn-link" do %>
     <p class="link-black text-center"><strong>back to profile</strong></p>
   <% end %>
-<% end %>
 
 <h1>Your Prescription</h1>
 

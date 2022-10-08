@@ -2,16 +2,16 @@ class PrescriptionsController < ApplicationController
   before_action :authenticate_doctor!, only: %i[create destroy]
 
   def index
-    @user = current_doctor || current_user
-    @appointment = Appointment.find_by(params[:id])
-    @prescriptions = Prescription.all
-    @prescription = Prescription.find_by(params[:id])
+    @user = current_doctor
+    @appointments = @user.appointments
+    appointments_ids = @appointments.map(&:id)
+    @prescriptions = Prescription.where(appointment_id: appointments_ids)
   end
 
   def show
     @user = current_doctor || current_user
-    @appointment = Appointment.find_by(params[:doctor_id])
     @prescription = Prescription.find(params[:id])
+    @appointment = Appointment.find(@prescription.appointment_id)
   end
 
   def new
