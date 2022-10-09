@@ -25,7 +25,6 @@ class AppointmentsController < ApplicationController
   end
 
   def create
-    # doctor = Doctor.find_by(id: params[:doctor_id])
     @appointment = current_user.appointments.new(appointment_params)
     if @appointment.save
       redirect_to @appointment
@@ -36,9 +35,9 @@ class AppointmentsController < ApplicationController
   end
 
   def destroy
-    @appointment = Appoinment.find(params[:id])
+    @appointment = Appointment.find(params[:id])
     @appointment.destroy!
-    redirect_to appointments_path(id: @patient.id), notice: 'Appointment was deleted successfully!'
+    redirect_to appointments_path(current_user.id), notice: 'Appointment was canceled successfully!'
   end
 
   def check_status(appointment)

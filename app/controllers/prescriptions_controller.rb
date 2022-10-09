@@ -36,7 +36,7 @@ class PrescriptionsController < ApplicationController
   def destroy
     @prescription = Prescription.find(params[:id])
     @prescription.destroy!
-    redirect_to prescriptions_path(id: @doctor.id), notice: 'Prescription was deleted successfully!'
+    redirect_to prescriptions_path(current_doctor.id), notice: 'Recommendation was deleted successfully!'
   end
 
   private
