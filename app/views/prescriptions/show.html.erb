@@ -4,5 +4,11 @@
 
 <h1>Your Prescription</h1>
 
-<h6>Prescription from doctor: <strong><%= @appointment.doctor.full_name %></strong></h6>
+<h6>Recommendation from doctor: <strong><%= @appointment.doctor.full_name %></strong></h6>
 <p><%= @prescription.prescript %></p>
+
+<% if current_doctor %>
+<div class="">
+  <%= button_to "Delete this recommendation", @prescription, 'method': :delete, class: 'btn btn-danger text-light rounded-2 my-2' %>     
+</div> 
+<% end %>

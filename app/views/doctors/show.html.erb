@@ -3,7 +3,7 @@
 <% end %>
 
 <h1 class="text-center">Doctor's Profile</h1>
-<h4 class="text-center">Dear doctor <strong><%= current_doctor.full_name%></strong>, please, serve your appointments</h4>
+<h4 class="text-center">Dear doctor <strong><%= current_doctor.full_name%></strong>, please, serve <br> your opened appointments</h4>
 
 <% if @appointments.blank? %>
   <h4>You dont have appointmnents yet</h4>
@@ -13,7 +13,10 @@
       <% if a.prescription %>
       <div class="card p-2">
         <div class="card-body">
-          <strong class="text-danger">Closed </strong>
+        <%= link_to prescription_path(a.prescription.id), class: "btn btn-link ps-5 m-0 text-success" do %>
+        <p class="link-black text-center"><strong>Your prescription</strong></p>
+        <% end %>
+        <p>Status: <strong class="text-danger">Closed</strong></p>       
         <% else %>
           <div class="card p-2">
             <div class="card-body">
