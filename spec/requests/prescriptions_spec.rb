@@ -1,7 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Prescriptions', type: :request do
+RSpec.describe 'CreatePrescriptions', type: :request do
   describe 'GET /index' do
-    pending "add some examples (or delete) #{__FILE__}"
   end
 end
