@@ -4,7 +4,7 @@ RSpec.describe User, type: :model do
   subject do
     create(:user)
   end
-  
+
   it 'is valid with valid attributes' do
     expect(subject).to be_valid
   end
@@ -26,7 +26,4 @@ RSpec.describe User, type: :model do
   it 'is not valid if the phone number is not all digits' do
     expect(subject.phone.match?(/\A-?\d+\Z/)).to eq(true)
   end
-
-
 end
-
