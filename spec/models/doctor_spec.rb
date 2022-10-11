@@ -1,10 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe Doctor, type: :model do
-  # pending "add some examples to (or delete) #{__FILE__}"
-
   subject do
-    @category = Category.create(name: 'surgeon')
+    create(:category)
     Doctor.new(full_name: 'Vahan', phone: '8889995678', category: @category, image: 'doc1.png', email: 'doc@mail.com',
                password: 'docdoc', category_id: '1')
   end
