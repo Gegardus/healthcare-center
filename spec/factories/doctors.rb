@@ -5,7 +5,7 @@ FactoryBot.define do
     email { Faker::Internet.email }
     password { Faker::Internet.password }
     image { Faker::Lorem.characters }
-    category { create(:category) }
     category_id { Faker::Number.number }
+    category
   end
 end

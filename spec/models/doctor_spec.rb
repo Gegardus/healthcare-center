@@ -3,8 +3,7 @@ require 'rails_helper'
 RSpec.describe Doctor, type: :model do
   subject do
     create(:category)
-    Doctor.new(full_name: 'Vahan', phone: '8889995678', category: @category, image: 'doc1.png', email: 'doc@mail.com',
-               password: 'docdoc', category_id: '1')
+    create(:doctor)
   end
 
   it 'is valid with valid attributes' do
