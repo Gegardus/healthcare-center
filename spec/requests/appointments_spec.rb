@@ -4,17 +4,17 @@ RSpec.describe 'Create Appointments', type: :request do
   describe 'POST /create' do
     context 'with valid parameters' do
       let(:valid_attributes) do
-        create(:category)        
-        create(:doctor)                        
+        create(:category)
+        create(:doctor)
         create(:user)
-        create(:appointment)        
+        create(:appointment)
       end
 
       it 'creates a new Appointment' do
-        expect {
+        expect do
           post appointments_url, params: { appointment: valid_attributes }
-          }.to change(Appointment, :count).by(1)      
-      end     
+        end.to change(Appointment, :count).by(1)
+      end
     end
   end
 end

@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe Doctor, type: :model do
   subject do
     create(:category)
-    create(:doctor)   
+    create(:doctor)
   end
 
   it 'is valid with valid attributes' do

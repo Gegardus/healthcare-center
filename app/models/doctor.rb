@@ -7,6 +7,7 @@ class Doctor < ApplicationRecord
   belongs_to :category
   has_many :appointments, dependent: :destroy
   has_many :users, through: :appointments
+  # has_one_attached :image
 
   validates :phone, presence: true, uniqueness: true
   validates :full_name, presence: true

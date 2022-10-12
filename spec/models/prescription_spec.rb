@@ -6,7 +6,7 @@ RSpec.describe Prescription, type: :model do
     create(:doctor)
     create(:user)
     create(:appointment)
-    create(:prescription) 
+    create(:prescription)
   end
 
   it 'is valid with valid attributes' do

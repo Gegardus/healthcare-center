@@ -4,8 +4,8 @@ FactoryBot.define do
     phone { Faker::Number.number(digits: 10) }
     email { Faker::Internet.email }
     password { Faker::Internet.password }
-    image { Faker::Lorem.characters }    
+    image { Faker::Lorem.characters }
     category_id { Faker::Number.number }
     category
-    end
+  end
 end
