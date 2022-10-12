@@ -75,6 +75,7 @@ end
 
 gem 'administrate'
 gem 'cancancan', '~> 1.9'
+gem 'cloudinary'
 gem 'devise'
 gem 'rubocop', '>= 1.0', '< 2.0'
 gem 'simple_form'
