@@ -5,6 +5,7 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
 User.create!(
   full_name: 'John Doe',
   phone: '2222222222',
@@ -23,3 +24,40 @@ AdminUser.create!(
   password: 'password1')
 
 p "Admin is successfully created!"
+
+Category.create!(
+  name: 'therapist')  
+
+Category.create!(
+  name: 'cardiologist') 
+
+Category.create!(
+  name: 'urologist')  
+  
+Category.create!(
+  name: 'surgeon') 
+
+p "Categories are successfully created!"
+
+Doctor.create!(  
+  full_name: 'Doc One',
+  phone: '4444444444',
+  password: 'oneone',
+  image: 'doc1.png',
+  category_id: 1)  
+
+Doctor.create!(  
+  full_name: 'Doc Two',
+  phone: '5555555555',
+  password: 'twotwo',
+  image: 'doc2.png',
+  category_id: 2)  
+
+Doctor.create!(  
+  full_name: 'Doc Three',
+  phone: '6666666666',
+  password: 'threethree',
+  image: 'doc3.png',
+  category_id: 3)      
+
+p "Doctors are successfully created!"
