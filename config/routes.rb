@@ -7,7 +7,7 @@ Rails.application.routes.draw do
       resources :users
       resources :admin_users
 
-      root to: "prescriptions#index"
+      root to: "admin_users#index"
     end
   get 'admin_users/index'
   get 'admin_users/show'

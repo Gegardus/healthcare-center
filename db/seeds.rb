@@ -42,22 +42,19 @@ p "Categories are successfully created!"
 Doctor.create!(  
   full_name: 'Doc One',
   phone: '4444444444',
-  password: 'oneone',
-  image: 'doc1.png',
+  password: 'oneone',  
   category_id: 1)  
 
 Doctor.create!(  
   full_name: 'Doc Two',
   phone: '5555555555',
   password: 'twotwo',
-  image: 'doc2.png',
   category_id: 2)  
 
 Doctor.create!(  
   full_name: 'Doc Three',
   phone: '6666666666',
   password: 'threethree',
-  image: 'doc3.png',
   category_id: 3)      
 
 p "Doctors are successfully created!"

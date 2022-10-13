@@ -82,7 +82,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_11_170702) do
     t.datetime "updated_at", null: false
     t.string "phone"
     t.string "full_name"
-    t.string "image"
     t.bigint "category_id", null: false
     t.index ["category_id"], name: "index_doctors_on_category_id"
     t.index ["reset_password_token"], name: "index_doctors_on_reset_password_token", unique: true

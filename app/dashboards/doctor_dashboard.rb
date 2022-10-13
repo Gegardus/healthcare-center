@@ -14,7 +14,7 @@ class DoctorDashboard < Administrate::BaseDashboard
     email: Field::String,
     encrypted_password: Field::String,
     full_name: Field::String,
-    image: Field::String,
+    attachment: Field::ActiveStorage,
     phone: Field::String,
     remember_created_at: Field::DateTime,
     reset_password_sent_at: Field::DateTime,
@@ -35,6 +35,7 @@ class DoctorDashboard < Administrate::BaseDashboard
     id
     appointments
     category
+    attachment
     email
   ].freeze
 
@@ -47,7 +48,7 @@ class DoctorDashboard < Administrate::BaseDashboard
     email
     encrypted_password
     full_name
-    image
+    attachment
     phone
     remember_created_at
     reset_password_sent_at
@@ -66,7 +67,7 @@ class DoctorDashboard < Administrate::BaseDashboard
     email
     encrypted_password
     full_name
-    image
+    attachment
     phone
     remember_created_at
     reset_password_sent_at
