@@ -17,9 +17,9 @@ Their possibilities are distributed as follows:
 - Admin has access to the list of patients and doctors. Can create categories, doctors, Assign a specific doctor to a category, which is implemented via Administrate.
 
 ![screenshot](./app_screenshot1.png)
+![screenshot](./app_screenshot4.png)
 ![screenshot](./app_screenshot2.png)
 ![screenshot](./app_screenshot3.png)
-![screenshot](./app_screenshot4.png)
 
 ## Live Demo
 
