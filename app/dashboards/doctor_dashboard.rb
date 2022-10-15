@@ -33,27 +33,19 @@ class DoctorDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
     id
-    appointments
+    full_name
     category
     attachment
-    email
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
     id
-    appointments
     category
-    email
-    encrypted_password
     full_name
     attachment
     phone
-    remember_created_at
-    reset_password_sent_at
-    reset_password_token
-    users
     created_at
     updated_at
   ].freeze
@@ -62,17 +54,10 @@ class DoctorDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
-    appointments
     category
-    email
-    encrypted_password
     full_name
     attachment
     phone
-    remember_created_at
-    reset_password_sent_at
-    reset_password_token
-    users
     password
     password_confirmation
   ].freeze
