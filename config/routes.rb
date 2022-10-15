@@ -4,7 +4,6 @@ Rails.application.routes.draw do
       resources :categories
       resources :appointments
       resources :doctors
-      resources :users
       resources :admin_users
 
       root to: "admin_users#index"
