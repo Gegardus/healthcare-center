@@ -23,7 +23,7 @@ Their possibilities are distributed as follows:
 
 ## Live Demo
 
-[Run if currently available]()
+[Run if currently available](https://aqueous-gorge-68010.herokuapp.com/)
 
 ## Built With
 
@@ -63,6 +63,8 @@ rails db:create
 rails db:migrate
 rails db:seed
 ```
+Then login as admin and create categories and doctors.
+
 ## Usage
 
 Start server with:

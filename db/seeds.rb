@@ -24,37 +24,3 @@ AdminUser.create!(
   password: 'password1')
 
 p "Admin is successfully created!"
-
-Category.create!(
-  name: 'therapist')  
-
-Category.create!(
-  name: 'cardiologist') 
-
-Category.create!(
-  name: 'urologist')  
-  
-Category.create!(
-  name: 'surgeon') 
-
-p "Categories are successfully created!"
-
-Doctor.create!(  
-  full_name: 'Doc One',
-  phone: '4444444444',
-  password: 'oneone',  
-  category_id: 1)  
-
-Doctor.create!(  
-  full_name: 'Doc Two',
-  phone: '5555555555',
-  password: 'twotwo',
-  category_id: 2)  
-
-Doctor.create!(  
-  full_name: 'Doc Three',
-  phone: '6666666666',
-  password: 'threethree',
-  category_id: 3)      
-
-p "Doctors are successfully created!"
