@@ -44,7 +44,7 @@ class AppointmentsController < ApplicationController
     @appointment = Appointment.find_by(params[:id])
     @prescriptions = Prescription.all
     @prescription = @appointment.prescription
-    appointment.status = 1 if appointment.recomendation?
+    appointment.status = 1 if appointment.recommendation?
   end
 
   private
