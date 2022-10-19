@@ -40,13 +40,6 @@ class AppointmentsController < ApplicationController
     redirect_to appointments_path(current_user.id), notice: 'Appointment was canceled successfully!'
   end
 
-  def check_status(appointment)
-    @appointment = Appointment.find_by(params[:id])
-    @prescriptions = Prescription.all
-    @prescription = @appointment.prescription
-    appointment.status = 1 if appointment.recommendation?
-  end
-
   private
 
   def appointment_params
