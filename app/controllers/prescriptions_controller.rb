@@ -25,11 +25,14 @@ class PrescriptionsController < ApplicationController
     @appointment = Appointment.find_by(id: params[:appointment_id])
     @prescription = Prescription.new(prescription_params)
 
-    if @prescription.save
-      redirect_to prescriptions_path
+    respond_to do |format|
+    if @prescription.save      
+      format.html { redirect_to prescriptions_path }
       flash[:notice] = 'Your prescription was successfully created'
     else
+      format.turbo_stream { render turbo_stream: turbo_stream.replace(@prescription, partial: 'prescriptions/form', locals: { prescription: @prescription }) }
       render :new, alert: 'An error has occurred while creating a prescription'
+    end
     end
   end
 

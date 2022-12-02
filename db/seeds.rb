@@ -6,21 +6,28 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-User.create!(
-  full_name: 'John Doe',
-  phone: '2222222222',
-  password: 'password2')
+# User.create!(
+#   full_name: 'Ani',
+#   phone: '222',
+#   password: '222222')
 
-User.create!(
-  full_name: 'Jane Doe',
-  phone: '3333333333',
-  password: 'password3')  
+# User.create!(
+#   full_name: 'Milly',
+#   phone: '333',
+#   password: '333333')  
 
-p "Patients are successfully created!"
+# p "Patients are successfully created!"
+
+# Doctor.create!(
+#   full_name: 'Vahan',
+#   phone: '555',
+#   password: '555555')  
+
+# p "Doctor is successfully created!"  
 
 AdminUser.create!(
   full_name: 'John Boss',
-  phone: '1111111111',
-  password: 'password1')
+  phone: '111',
+  password: '111111')
 
 p "Admin is successfully created!"

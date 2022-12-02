@@ -18,13 +18,15 @@
             <%= link_to prescription_path(a.prescription.id), class: "link-success p-2" do %>
               <p class="text-center px-5 mx-1"><strong>Written prescript</strong></p>
             <% end %>
-        <p>Appointment Status: <strong class="text-danger">Closed</strong></p>       
+        <p>Appointment Status: <strong class="text-danger">Closed</strong></p>               
       <% else %>
         <div class="card p-2">
-          <div class="card-body">
-            <%= link_to new_prescription_path(appointment_id: a.id), class: "link-danger p-2" do %>
-              <p class="text-center px-5 mx-1"><strong>Write a prescript</strong></p>
+          <div class="card-body">       
+          <%= turbo_frame_tag "create_prescripion_form" do %>
+            <%= link_to new_prescription_path(appointment_id: a.id), class: "link-danger p-2", data: { turbo_frame: 'create_prescription_form' } do %>          
+              <p class="text-center px-5 mx-1"><strong>Write a prescript</strong></p>                   
             <% end %>
+          <% end %>
             <p>Appointment Status: <strong class="text-primary">Opened</strong></p> 
       <% end %>
         <p>Patient name: <strong><%= a.user.full_name %></strong></p>
