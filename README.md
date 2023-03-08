@@ -23,7 +23,7 @@ Their possibilities are distributed as follows:
 
 ## Live Demo
 
-[Run if currently available](https://aqueous-gorge-68010.herokuapp.com/)
+[Run if currently available](healthcare-center-production.up.railway.app)
 
 ## Built With
 
