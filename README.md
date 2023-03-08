@@ -23,7 +23,7 @@ Their possibilities are distributed as follows:
 
 ## Live Demo
 
-[Run if currently available](healthcare-center-production.up.railway.app)
+[Run if currently available](healthcare-center-production.up.railway.app/)
 
 ## Built With
 
